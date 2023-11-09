@@ -13,32 +13,33 @@
 #define MAX_GRADE       9
 #define MAX_NODE		100
 
-static char smmobj_name[MAX_NODE][MAX_CHARNAME];
-static int smmobj_type[MAX_NODE];
-static int smmobj_credit[MAX_NODE];
-static int smmobj_energy[MAX_NODE];
-static int smmobj_noNOde=0;
-
-
+static char smmObj_name[MAX_NODE][MAX_CHARNAME];
+static int smmObj_type[MAX_NODE];
+static int smmObj_credit[MAX_NODE];
+static int smmObj_energy[MAX_NODE];
+static int smmObj_noNode=0;
 
 
 //object generation
-void smmobj_genNode(char* name,int type,int credit,int energy) //노드를 만드는 함수  
+void smmObj_getNode(char* name,int type,int credit,int energy) //노드를 만드는 함수  
 {
-	strcpy(smmobj_name[smmobj_noNode],name);
-	smmobj_type[smmobj_noNOde]=type;
-    smmobj_credit[smmobj_noNOde]=credit;
-    smmobj_energy[smmobj_noNOde]=energy;
+	strcpy(smmObj_name[smmObj_noNode],name);
+	smmObj_type[smmObj_noNode]=type;
+    smmObj_credit[smmObj_noNode]=credit;
+    smmObj_energy[smmObj_noNode]=energy;
     
-    smmobj_noNode++;
+    smmObj_noNode++;
 }
 
-char* smmobj_getnodename[int node_nr];
+char* smmObj_getNodeName(int node_nr)
+	{
+	return smmObj_name[node_nr];
+	}
 
-int smmobj_getnodetype(int node_nr);
-{
-	return smmobj_type[node_nr];
-}
+int smmObj_getNodeTyp(int node_nr)
+	{
+	return smmObj_type[node_nr];
+	}
 
 #if 0
 
@@ -58,4 +59,4 @@ char* smmObj_getGradeName(smmGrade_e grade)
 {
     return smmGradeName[grade];
 }
-
+#endif
