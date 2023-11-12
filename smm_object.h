@@ -4,6 +4,7 @@
 //
 //  Created by Juyeop Kim on 2023/11/05.
 //
+
 #ifndef smm_object_h
 #define smm_object_h
 
@@ -30,8 +31,8 @@
     C-
 */
 
-#endif
-#if 0
+
+
 //object generation
 void smmObj_genNode(char* name, int type, int credit, int energy);
 

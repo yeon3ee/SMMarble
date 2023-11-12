@@ -2,7 +2,7 @@
 //  main.c
 //  SMMarble
 //
-//  Created by Juyeop Kim on 2023/11/05.
+//  Created by Cheyeon Park on 2023/11/05. update on 2023/11/10
 //
 
 #include <time.h>
@@ -11,7 +11,7 @@
 #include "smm_database.h"
 #include "smm_common.h"
 
-#define BOARDFILEPATH "marbleBoardConfig.txt" //전처리기때 배 
+#define BOARDFILEPATH "marbleBoardConfig.txt"
 #define FOODFILEPATH "marbleFoodConfig.txt"
 #define FESTFILEPATH "marbleFestivalConfig.txt"
 
@@ -68,6 +68,7 @@ void actionNode(int player)
 #endif
 
 
+
 int main(int argc, const char * argv[]) {
     
     FILE* fp;
@@ -91,20 +92,21 @@ int main(int argc, const char * argv[]) {
         printf("[ERROR] failed to open %s. This file should be in the same directory of SMMarble.exe.\n", BOARDFILEPATH);
         getchar();
         return -1;
-    } // 파일 열기  
+    }
     
     printf("Reading board component......\n");
-    while(fscanf(fp,"%s %i %i %i",name,&type,&credit,&energy)==4) //read a node parameter set
+    while ( fscanf(fp, "%s %i %i %i", name, &type, &credit, &energy) == 4 ) //read a node parameter set
     {
         //store the parameter set
-        smmObj_genNode(name,type,credit,energy);
+        smmObj_genNode(name, type, credit, energy);
         board_nr++;
     }
-    fclose(fp); 
+    fclose(fp);
     printf("Total number of board nodes : %i\n", board_nr);
     
-    for(i=0;i<board_nr;i++); 
-    	printf("node %i : %s, %i\n",i,smmObj_getNodeName(i),smmObj_getNodeType(i));
+    for (i = 0;i<board_nr;i++)
+        printf("node %i : %s, %i\n", i, smmObj_getNodeName(i), smmObj_getNodeType(i));
+    
     #if 0
     //2. food card config 
     if ((fp = fopen(FOODFILEPATH,"r")) == NULL)
@@ -171,5 +173,6 @@ int main(int argc, const char * argv[]) {
         
     }
     #endif
+    system("PAUSE");
     return 0;
 }
