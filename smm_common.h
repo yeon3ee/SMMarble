@@ -2,7 +2,7 @@
 //  smm_common.h
 //  SMMarble
 //
-//  Created by Juyeop Kim on 2023/11/05.
+//  Created by Juyeop Kim on 2023/11/05. Updated by Cheyeon Park on2023/12.
 //
 
 #ifndef smm_common_h
@@ -18,4 +18,4 @@
 #define MAX_PLAYER                  10
 
 
-#endif /* smm_common_h */
+#endif
